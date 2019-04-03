@@ -1,0 +1,143 @@
+"","Connectivity","P_Value"
+"exisulind",0.80925,0.0680053105705813
+"arachidonyltrifluoromethane",0.788825,0.102530573791499
+"celastrol",0.7587,0.0715349609568723
+"5152487",0.68115,0.0919458915058911
+"MG-132",0.67162,0.203281731017207
+"amitriptyline",0.658505,0.0421557418793194
+"monorden",0.63003,0.30766688118243
+"colchicine",0.625465,0.0727253419854589
+"deferoxamine",0.6252,0.174621550105077
+"15-delta prostaglandin J2",0.61473,0.26048354291671
+"ciclosporin",0.57259,0.121088063360078
+"decitabine",0.56703,0.138126428510258
+"bucladesine",0.55844,0.302954206115951
+"HC toxin",0.5451,0.527311822454252
+"geldanamycin",0.54424,0.568892805434075
+"tacrolimus",0.54167,0.317164396572254
+"clotrimazole",0.539635,0.319174341000036
+"5253409",0.53165,0.0830033788495685
+"tetraethylenepentamine",0.520405,0.684792767720557
+"docosahexaenoic acid ethyl ester",0.50205,0.45789482227898
+"copper sulfate",0.48591,0.643643735039694
+"butirosin",0.47863,0.475728960257347
+"5286656",0.4727,0.627863257052891
+"staurosporine",0.46144,0.607279807907322
+"probucol",0.45612,0.572743030392257
+"rosiglitazone",0.454645,0.650746751372069
+"pararosaniline",0.44609,0.744496970512683
+"5151277",0.437415,0.270491161389769
+"fasudil",0.41589,0.853021597121014
+"diclofenac",0.389965,0.849178882172553
+"metformin",0,1
+"phenformin",0,1
+"valproic acid",0,1
+"estradiol",0,1
+"dexamethasone",0,1
+"mesalazine",0,1
+"sulindac",0,1
+"sulfasalazine",0,1
+"TTNPB",0,1
+"tretinoin",0,1
+"indometacin",0,1
+"clofibrate",0,1
+"MK-886",0,1
+"prednisolone",0,1
+"genistein",0,1
+"fludrocortisone",0,1
+"quercetin",0,1
+"monastrol",0,1
+"NU-1025",0,1
+"acetylsalicylic acid",0,1
+"flufenamic acid",0,1
+"trichostatin A",0,1
+"mercaptopurine",0,1
+"nifedipine",0,1
+"nitrendipine",0,1
+"novobiocin",0,1
+"imatinib",0,1
+"pirinixic acid",0,1
+"cobalt chloride",0,1
+"clozapine",0,1
+"haloperidol",0,1
+"chlorpromazine",0,1
+"iloprost",0,1
+"arachidonic acid",0,1
+"prochlorperazine",0,1
+"quinpirole",0,1
+"calmidazolium",0,1
+"4,5-dianilinophthalimide",0,1
+"butein",0,1
+"resveratrol",0,1
+"nocodazole",0,1
+"pentamidine",0,1
+"paclitaxel",0,1
+"rottlerin",0,1
+"5252917",0,1
+"Y-27632",0,1
+"5248896",0,1
+"5224221",0,1
+"5230742",0,1
+"ikarugamycin",0,1
+"5182598",0,1
+"ionomycin",0,1
+"5186223",0,1
+"5149715",0,1
+"5162773",0,1
+"5186324",0,1
+"5114445",0,1
+"5109870",0,1
+"topiramate",0,1
+"vorinostat",0,1
+"(-)-catechin",0,1
+"12,13-EODE",0,1
+"3-hydroxy-DL-kynurenine",0,1
+"doxycycline",0,1
+"tyrphostin AG-825",0,1
+"DL-PPMP",0,1
+"cytochalasin B",0,1
+"minocycline",0,1
+"phentolamine",0,1
+"tyrphostin AG-1478",0,1
+"azathioprine",-0.321365,0.911402077970473
+"nordihydroguaiaretic acid",-0.33051,0.95853773861681
+"blebbistatin",-0.346695,0.921811524778088
+"fluphenazine",-0.407115,0.830209728800042
+"tolbutamide",-0.407975,0.743857814654957
+"phenanthridinone",-0.41456,0.79517058388362
+"fulvestrant",-0.41851,0.825900582342774
+"trifluoperazine",-0.42526,0.789281377349031
+"alpha-estradiol",-0.444185,0.534609259998879
+"demecolcine",-0.44526,0.707253016702471
+"tamoxifen",-0.445965,0.509997860301889
+"depudecin",-0.44816,0.604989910470457
+"yohimbine",-0.449385,0.452595093956755
+"thalidomide",-0.45539,0.621045106274694
+"chlorpropamide",-0.45803,0.635554377671347
+"SC-58125",-0.45851,0.763904091403216
+"pyrvinium",-0.461085,0.729189222525241
+"5213008",-0.476605,0.645478639295948
+"5255229",-0.48329,0.637608762523233
+"colforsin",-0.499575,0.59864848723863
+"wortmannin",-0.502925,0.389218250276055
+"thioridazine",-0.506035,0.713733018880837
+"troglitazone",-0.510815,0.37453758470866
+"monensin",-0.515415,0.415943502256055
+"verapamil",-0.5207,0.299845725881902
+"5211181",-0.53787,0.285887750107172
+"BW-B70C",-0.544425,0.335820673471858
+"oxaprozin",-0.546635,0.341461698903496
+"raloxifene",-0.5634,0.303552512177528
+"rofecoxib",-0.568505,0.205589599283487
+"5279552",-0.59985,0.0744468451993234
+"carbamazepine",-0.60634,0.09779465368389
+"benserazide",-0.60669,0.177854826464585
+"prazosin",-0.61482,0.0972594642826571
+"sodium phenylbutyrate",-0.621945,0.239624280286287
+"felodipine",-0.62657,0.0462923806509474
+"sirolimus",-0.628005,0.356338577360901
+"celecoxib",-0.65109,0.0559700900903712
+"W-13",-0.669675,0.437025779289887
+"LY-294002",-0.676615,0.083737097793648
+"LM-1685",-0.68776,0.0769104423039113
+"5140203",-0.69798,0.0305132868810091
