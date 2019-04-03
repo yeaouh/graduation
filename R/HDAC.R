@@ -8,6 +8,7 @@ library(gdata)
 library(AnnotationDbi)
 library(hgu133a.db)
 library(gridExtra)
+library(biomaRt)
 nbcore <- 4
 
 #download and process HDAC signature
@@ -25,7 +26,11 @@ annot<-AnnotationDbi::select(hgu133a.db,keys = c(HDAC_up[[1]],HDAC_down[[1]]),co
 gene_up<-unique(annot[match(HDAC_up[[1]],annot[,1]),2])
 gene_down<-na.omit(unique(annot[match(HDAC_down[[1]],annot[,1]),2]))
 HDAC_genes<-as.data.frame(matrix(NA,nrow = length(gene_down)+length(gene_up),ncol = 2))
-HDAC_genes[,1]<-paste("geneid",c(gene_up,gene_down),sep = ".")
+ensembl<-useMart("ensembl",dataset = "hsapiens_gene_ensembl")
+entrzID=c(gene_up,gene_down)
+genesymbol<-getBM(attributes = c("entrezgene","hgnc_symbol","ensembl_gene_id"),filters = "entrezgene",values = entrzID,mart = ensembl)
+
+HDAC_genes[,1]<-paste(genesymbol[,3],"at",sep = "_")
 HDAC_genes[,2]<-c(rep(1,times=length(gene_up)),rep(-1,times=length(gene_down)))
 rownames(HDAC_genes)<-HDAC_genes[ ,1]
 HDAC<-HDAC_genes[ ,2]
@@ -48,7 +53,7 @@ if(!file.exists(myfn)){
 
 HDAC_inhibitors<-c("vorinostat","trichostatin_A","HC_toxin","valproic_acid")
 res<-res[order(res[,1],decreasing = T),]
-my_ranks<-which(rownames(res) %n% HDAC_inhibitors)
+my_ranks<-which(rownames(res) %in% HDAC_inhibitors)
 total<-dim(drug.perturbation)[2]
 ranks<-my_ranks
 positions<-total-ranks+1
@@ -69,7 +74,7 @@ positions<-total-ranks+1
 
 pdf("CMAP_Case_Study_all_drugs_top_50.pdf")
 plot.new()
-rect(0,0,1,1,col = "lightgery",border = FALSE)
+rect(0,0,1,1,col = "lightgrey",border = FALSE)
 for (position in positions) {
   rect(0,1/total*(position),1,1/total*(position-1),col = "red",border = FALSE)
 }
@@ -78,7 +83,7 @@ dev.off()
 drugs_v1<-unique(read.xls(paste(mydir,paste(mydir,"tableS1.xls",sep = "_"),sep = "/"),sheet = 1,stringsAsFactors=FALSE)[,"cmap_name"])
 drugs_v1<-drugs_v1[!drugs_v1%in%c("",NA)]
 int_drugs<-intersect(drugs_v1,rownames(res))
-res_v1<-res[int_drugs]
+res_v1<-res[int_drugs,]
 res_v1<-res_v1[order(res_v1[,1],decreasing = T),]
 colnames(res_v1)<-c("Connectivity","P_Value")
 my_ranks<-which(rownames(res_v1)%in%HDAC_inhibitors)
@@ -95,9 +100,9 @@ for (position in positions) {
 dev.off()
 
 pdf("HDAC_res_table.pdf")
-grid.table(res[1:20, ],seperator=NA)
+grid.table(res[1:20, ])
 dev.off()
 
 pdf("HDAC_res_v1_table.pdf")
-grid.table(res_v1[1:20, ],seperator=NA)
+grid.table(res_v1[1:20, ])
 dev.off()
