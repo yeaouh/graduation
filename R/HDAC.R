@@ -22,15 +22,15 @@ perl<-"C:\\Users\\yuki\\Downloads\\mingw\\bin\\Perl\\bin\\perl.exe"
 HDAC_up<-read.xls(paste(mydir,paste(mydir,"sigS1.xls",sep="_"),sep="/"),sheet = 1,header=FALSE,as.is=TRUE,perl = perl)
 HDAC_down<-read.xls(paste(mydir,paste(mydir,"sigS1.xls",sep="_"),sep="/"),sheet = 2,header=FALSE,as.is=TRUE,perl = perl)
 HDAC<-as.data.frame(matrix(NA,nrow = nrow(HDAC_down)+nrow(HDAC_up),ncol = 2))
-annot<-AnnotationDbi::select(hgu133a.db,keys = c(HDAC_up[[1]],HDAC_down[[1]]),columns = c("ENTREZID"),keytype = "PROBEID")
+annot<-AnnotationDbi::select(hgu133a.db,keys = c(HDAC_up[[1]],HDAC_down[[1]]),columns = c("ENSEMBL"),keytype = "PROBEID")
 gene_up<-unique(annot[match(HDAC_up[[1]],annot[,1]),2])
 gene_down<-na.omit(unique(annot[match(HDAC_down[[1]],annot[,1]),2]))
 HDAC_genes<-as.data.frame(matrix(NA,nrow = length(gene_down)+length(gene_up),ncol = 2))
-ensembl<-useMart("ensembl",dataset = "hsapiens_gene_ensembl")
-entrzID=c(gene_up,gene_down)
-genesymbol<-getBM(attributes = c("entrezgene","hgnc_symbol","ensembl_gene_id"),filters = "entrezgene",values = entrzID,mart = ensembl)
-
-HDAC_genes[,1]<-paste(genesymbol[,3],"at",sep = "_")
+#ensembl<-useMart("ensembl",dataset = "hsapiens_gene_ensembl")
+#entrzID=c(gene_up,gene_down)
+#genesymbol<-getBM(attributes = c("entrezgene","hgnc_symbol","ensembl_gene_id"),filters = "entrezgene",values = entrzID,mart = ensembl)
+genesymbol<-c(gene_up,gene_down)
+HDAC_genes[,1]<-paste(genesymbol,"at",sep = "_")
 HDAC_genes[,2]<-c(rep(1,times=length(gene_up)),rep(-1,times=length(gene_down)))
 rownames(HDAC_genes)<-HDAC_genes[ ,1]
 HDAC<-HDAC_genes[ ,2]
@@ -51,7 +51,7 @@ if(!file.exists(myfn)){
   load(myfn)
 }
 
-HDAC_inhibitors<-c("vorinostat","trichostatin_A","HC_toxin","valproic_acid")
+HDAC_inhibitors<-c("vorinostat","trichostatin A","HC toxin","valproic acid")
 res<-res[order(res[,1],decreasing = T),]
 my_ranks<-which(rownames(res) %in% HDAC_inhibitors)
 total<-dim(drug.perturbation)[2]
